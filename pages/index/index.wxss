@@ -1,0 +1,13 @@
+.placeholder{
+    height: 5.3em;
+    line-height: 5.3em;
+    text-align: center;
+    vertical-align:middle;
+    margin: 5px;
+    color: #cfcfcf;
+}
+
+.weui-register__img {
+  width: 79px;
+  height: 79px;
+}

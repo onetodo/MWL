@@ -1,0 +1,144 @@
+<scroll-view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">出发地</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindProvinceChange" value="{{provinceIndex}}" range="{{province}}">
+                        <view class="weui-select weui-select_in-select-after">{{province[provinceIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCityChange" value="{{cityIndex}}" range="{{city}}">
+                        <view class="weui-select weui-select_in-select-after">{{city[cityIndex]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCountyChange" value="{{countyIndex}}" range="{{county}}">
+                        <view class="weui-select weui-select_in-select-after">{{county[countyIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">到达地</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindProvinceChange1" value="{{provinceIndex1}}" range="{{province1}}">
+                        <view class="weui-select weui-select_in-select-after">{{province1[provinceIndex1]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCityChange1" value="{{cityIndex1}}" range="{{city1}}">
+                        <view class="weui-select weui-select_in-select-after">{{city1[cityIndex1]}}</view>
+                    </picker>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCountyChange1" value="{{countyIndex1}}" range="{{county1}}">
+                        <view class="weui-select weui-select_in-select-after">{{county1[countyIndex1]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">货物类型</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCargoTypesChange" value="{{cargoTypesIndex}}" range="{{cargoTypes}}">
+                        <view class="weui-select weui-select_in-select-after">{{cargoTypes[cargoTypesIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">货物数量</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="digit" placeholder="请输入货物数量" />
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindcargoUnitsChange" value="{{cargoUnitsIndex}}" range="{{cargoUnits}}">
+                        <view class="weui-select weui-select_in-select-after">{{cargoUnits[cargoUnitsIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">零担</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindcargoLingdanChange" value="{{cargoLingdanIndex}}" range="{{cargoLingdan}}">
+                        <view class="weui-select weui-select_in-select-after">{{cargoLingdan[cargoLingdanIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">车长</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCarLengthChange" value="{{carLengthIndex}}" range="{{carLength}}">
+                        <view class="weui-select weui-select_in-select-after">{{carLength[carLengthIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">车型</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker bindchange="bindCarTypesChange" value="{{carTypesIndex}}" range="{{carTypes}}">
+                        <view class="weui-select weui-select_in-select-after">{{carTypes[carTypesIndex]}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">货物运费</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="digit" placeholder="请输入货物运费" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">装车日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                        <view class="weui-input">{{date}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">装车时间</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+                        <view class="weui-input">{{time}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cells__title">备注</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" placeholder="请输入备注" style="height: 3.3em" />
+                        <view class="weui-textarea-counter">0/200</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="openConfirm">确定</button>
+        </view>
+
+    </view>
+</scroll-view>
